@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Apply Here - Hot Beans Web</title>
+
+<style>
+/* -------- Page / Layout -------- */
+:root{
+    --peach-100:#f7ede3;
+    --peach-200:#f7d1b6;
+    --peach-300:#f3c3a3;
+    --peach-400:#f3b48f;
+    --text:#333;
+    --btn:#3a2c21;
+    --btn-hover:#2a1f17;
+}
+
+*{ box-sizing:border-box; }
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text);
+    background: var(--peach-100);
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------- Top Quick Nav (dropdown) -------- */
+.topbar {
+    background:#fff;
+    border-bottom:2px solid #e7b598;
+    padding:10px 16px;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    gap:12px;
+}
+
+.topbar .brand {
+    font-weight:700;
+    color: var(--text);
+}
+
+.topbar .jump-select {
+    padding:8px 10px;
+    border:1px solid #e6e6e6;
+    border-radius:6px;
+    font-size:14px;
+    background:#fff;
+}
+
+/* -------- Header band to match your theme -------- */
+header {
+    background: var(--peach-400);
+    text-align: center;
+    padding: 28px 16px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* -------- Main content wrapper -------- */
+main {
+    flex: 1 0 auto; /* grow to fill space so footer stays at bottom */
+}
+
+/* -------- Form container -------- */
+.form-box {
+    width: 70%;
+    max-width: 860px;
+    background: #fff;
+    margin: 32px auto 40px;
+    padding: 28px;
+    border-radius: 8px;
+    border: 1px solid var(--peach-300);
+}
+
+/* Form title with peach underline */
+.form-box h2 {
+    margin: 0 0 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--peach-300);
+    color: var(--text);
+    font-size: 22px;
+}
+
+/* Labels */
+label {
+    font-weight: 700;
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 6px;
+}
+
+/* Inputs / selects / textarea */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    background:#fff;
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Submit button */
+button[type="submit"] {
+    margin-top: 24px;
+    width: 100%;
+    padding: 14px;
+    background: var(--btn);
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background: var(--btn-hover);
+}
+
+/* -------- Footer (sticks to bottom when page is short) -------- */
+footer.footer {
+    flex-shrink: 0;
+    background: #ffffff;
+    text-align: center;
+    padding: 16px;
+    border-top: 2px solid #f5c6a5;
+    color: var(--text);
+    font-size: 14px;
+}
+
+/* -------- Responsive tweaks -------- */
+@media (max-width: 900px) {
+    .form-box { width: 86%; }
+}
+
+@media (max-width: 600px) {
+    header h1 { font-size: 22px; }
+    .form-box { width: 92%; padding: 20px; }
+    .topbar { flex-wrap: wrap; gap:8px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Top dropdown to help users get back to homepage -->
+<div class="topbar">
+    <div class="brand">Hot Beans Web</div>
+    <select class="jump-select" aria-label="Quick navigation" onchange="if(this.value) window.location.href=this.value;">
+        <!-- Update the hrefs to match your file names/paths -->
+        <option value="">Go to…</option>
+        <option value="index.html">🏠 Home</option>
+        <option value="about.html">About</option>
+        <option value="staff.html">Meet the Staff</option>
+        <option value="jobs.html">Job Requirements</option>
+        <option value="courses.html">Courses</option>
+        <option value="apply.html" selected>Apply Here</option>
+    </select>
+</div>
+
+<header>
+    <h1>Apply to Hot Beans Web</h1>
+</header>
+
+<main>
+    <div class="form-box">
+        <h2>Online Application Form</h2>
+
+        <form action="#" method=""fullname">Full Name:</label>
+            <input id="fullname" name="fullname" type="text" placeholder="Enter your full name" required />
+
+            <label for="email">Email Address:</label>
+            <input id="email" name="email" type="email" placeholder="Enter your email" required />
+
+            <label for="qualification">Qualification:</label>
+            <select id="qualification" name="qualification" required>
+                <option value="BTEC Level 3 IT">BTEC Level 3 IT</option>
+                <option value="GCSE ICT">GCSE ICT</option>
+                <option value="A-Level Computer Science">A-Level Computer Science</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="why">Why do you want to join Hot Beans Web?</label>
+            <textarea id="why" name="why" placeholder="Tell us why you want to apply..." required></textarea>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+</main>
+
+<footer class="footer">
+    © <span id="year"></span> Hot Beans Web — All rights reserved.
+</footer>
+
+<script>
+/* set the year automatically */
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
