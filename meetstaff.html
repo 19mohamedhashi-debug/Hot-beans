@@ -1,1 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trainee Profiles - Hot Beans Web</title>
+    <meta charset="UTF-8">
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(to bottom, #fff7f2, #fbe9df);
+            color: #3a2d22;
+        }
+
+        /* NAVIGATION BAR */
+        nav {
+            background: #ffffffcc;
+            backdrop-filter: blur(6px);
+            padding: 15px 40px;
+            display: flex;
+            gap: 25px;
+            border-bottom: 1px solid #e6d6c8;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #3a2d22;
+            font-weight: bold;
+            padding: 8px 14px;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            background-color: #f7d9c4;
+        }
+
+        /* HEADER */
+        .header-box {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(to right, #f7d9c4, #f3e1d3);
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .header-box h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .header-box p {
+            font-size: 18px;
+            color: #5a4a3d;
+        }
+
+        /* TRAINEE CARDS */
+        .profiles-container {
+            width: 85%;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .profile-card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid #e6d6c8;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: 0.25s;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+
+        .profile-card h3 {
+            margin-top: 0;
+            font-size: 22px;
+            color: #3a2d22;
+        }
+
+        .profile-card p {
+            line-height: 1.6;
+            color: #5a4a3d;
+        }
+
+        /* BACK BUTTON */
+        .back-btn {
+            display: block;
+            width: fit-content;
+            margin: 40px auto;
+            padding: 12px 25px;
+            background-color: #3a2d22;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            background-color: #5a4636;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="trainees.html" style="background:#f7d9c4;">Trainee Profiles</a>
+    <a href="jobs.html">Job Specs</a>
+    <a href="apply.html">Apply</a>
+    <a href="courses.html">Courses</a>
+</nav>
+
+<!-- HEADER -->
+<div class="header-box">
+    <h1>Meet Our Trainee Developers</h1>
+    <p>These are the passionate learners who are growing their skills at Hot Beans Web.</p>
+</div>
+
+<!-- TRAINEE PROFILES -->
+<div class="profiles-container">
+
+    <div class="profile-card">
+        <h3>Alex Johnson</h3>
+        <p><strong>Specialism:</strong> Front‑End Development</p>
+        <p>Alex focuses on HTML, CSS, and responsive design. He enjoys creating clean, modern layouts and improving user experience.</p>
+    </div>
+
+    <div class="profile-card">
+        <h3>Sam Patel</h3>
+        <p><strong>Specialism:</strong> JavaScript & Interactivity</p>
+        <p>Sam loves building interactive features using JavaScript. He is currently learning React and improving his dynamic UI skills.</p>
+    </div>
+
+    <div class="profile-card">
+        <h3>Maria Lopez</h3>
+        <p><strong>Specialism:</strong> UX/UI Design</p>
+        <p>Maria designs user‑friendly interfaces and focuses on accessibility. She works closely with developers to improve usability.</p>
+    </div>
+
+    <div class="profile-card">
+        <h3>Daniel Green</h3>
+        <p><strong>Specialism:</strong> Back‑End Basics</p>
+        <p>Daniel is learning server‑side development and databases. He enjoys problem‑solving and understanding how systems work behind the scenes.</p>
+    </div>
+
+</div>
+
+<!-- BACK BUTTON -->
+<a href="index.html" class="back-btn">← Back to Homepage</a>
+
+</body>
+</html>
 
